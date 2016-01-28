@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="dotrand-app">
   <head>
     <title>Dotrand</title>
     <meta name="viewport" width="device-width" content="initial-scale=1" />
-
+    <base href="/">
     <!-- Include CSS -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
   </head>
   <body>
 
-
-    <div>
-      <h2>Hello</h2>
-    </div>
+    <ui-view></ui-view>
 
     <!-- Include javascript libraries -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -24,15 +24,17 @@
     <script src="/assets/lib/angular/angular.min.js"></script>
     <script src="/assets/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/assets/lib/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="/assets/lib/ngstorage/ngStorage.min.js"></script>
 
     <!-- Include the angular app files -->
-    <script src="app/app.js"></script>
-    <script src="app/app.routes.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/app.routes.js"></script>
 
     <!-- Include all required services -->
 
 
     <!-- Include all controllers -->
+    <script src="/app/controllers/home.js"></script>
 
   </body>
 </html>

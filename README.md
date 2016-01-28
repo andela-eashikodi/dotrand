@@ -4,4 +4,6 @@ This is the frontend for dotrand. Built with Angular
 
 ## Setup
 
-* Clone and run npm install
+* Clone
+* run npm install
+* run npm start
