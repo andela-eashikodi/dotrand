@@ -16,7 +16,8 @@
   "homepage": "https://bitbucket.org/ashikodi/dotrand#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "http-server": "^0.8.0",
-    "path": "^0.12.7"
+    "ghost": "^0.7.6",
+    "path": "^0.12.7",
+    "sqlite": "0.0.4"
   }
 }
