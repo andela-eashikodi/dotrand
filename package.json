@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/ashikodi/dotrand.git"
   },
+  "engines": {
+    "node": "5.0.0"
+  },
   "author": "",
   "license": "ISC",
   "homepage": "https://bitbucket.org/ashikodi/dotrand#readme",
