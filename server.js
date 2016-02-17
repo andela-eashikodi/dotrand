@@ -13,7 +13,8 @@ app.get('/', function(req, res) {
 });
 
 ghost({
-  config: path.join(__dirname, 'config.js')
+  config: path.join(__dirname, 'config.js'),
+  contentPath: path.join(__dirname, 'content/')
 }).then(function (ghostServer) {
   app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
   ghostServer.start(app);
