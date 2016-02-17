@@ -40,7 +40,7 @@ config = {
         },
         
         paths: {
-            contentPath: path.join(__dirname, '/blog/')
+            contentPath: path.join('', '/blog/')
         }
     },
 
