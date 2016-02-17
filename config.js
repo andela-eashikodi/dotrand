@@ -4,7 +4,6 @@
 // Ghost runs in `development` mode by default. Full documentation can be found at http://support.ghost.org/config/
 
 var path = require('path'),
-    appDir = path.dirname(require.main.filename),
     config;
 
 config = {
@@ -29,7 +28,7 @@ config = {
         database: {
             client: 'sqlite3',
             connection: {
-                filename: path.join(__dirname, '/blog/data/ghost.db')
+                filename: path.join(__dirname, '/content/data/ghost.db')
             },
             debug: false
         },
@@ -85,6 +84,5 @@ config = {
         }
     }
   };
-
 
 module.exports = config;
