@@ -12,7 +12,6 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://www.dotrand.com/blog',
-        fileStorage: false,
         mail: {
           transport: 'SMTP',
           host: 'smtp.mandrillapp.com',
