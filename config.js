@@ -13,7 +13,18 @@ config = {
     production: {
         url: 'http://dotrand.com/blog',
         fileStorage: false,
-        mail: {},
+        mail: {
+          transport: 'SMTP',
+          host: 'smtp.mandrillapp.com',
+          port: 587,
+          options: {
+            service: 'Mandrill',
+            auth: {
+              user: process.env.MANDRILL_USERNAME,
+              pass: process.env.MANDRILL_APIKEY
+            }
+          }
+        },
         database: {
             client: 'sqlite3',
             connection: {
@@ -36,18 +47,18 @@ config = {
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
+        mail: {
+          transport: 'SMTP',
+          host: 'smtp.mandrillapp.com',
+          port: 587,
+          options: {
+            service: 'Mandrill',
+            auth: {
+              user: 'ashikodiemeka@gmail.com',
+              pass: 'D4MvabypFN57VpKxlOBvqg'
+            }
+          }
+        },
 
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
