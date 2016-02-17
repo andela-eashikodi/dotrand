@@ -27,7 +27,7 @@ config = {
         database: {
             client: 'sqlite3',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
+                filename: path.join(__dirname, '/blog/data/ghost.db')
             },
             debug: false
         },
@@ -37,7 +37,7 @@ config = {
             port: process.env.PORT
         },
         paths: {
-            contentPath: path.join(__dirname, '/content/')
+            contentPath: path.join(__dirname, '/blog/')
         }
     },
 
