@@ -37,6 +37,7 @@ config = {
             host: '0.0.0.0',
             port: process.env.PORT
         },
+        
         paths: {
             contentPath: path.join(__dirname, '/content/')
         }
@@ -87,5 +88,6 @@ config = {
         }
     }
   };
+  console.log('dirname', path.dirname(require.main.filename));
 
 module.exports = config;

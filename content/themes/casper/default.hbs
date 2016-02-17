@@ -1,50 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     {{! Document Settings }}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{! Page Meta }}
-    <title>{{meta_title}}</title>
+    <title>{{meta_title}}{{#is "post, page"}} — {{@blog.title}}{{/is}}</title>
     <meta name="description" content="{{meta_description}}" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    <link rel="shortcut icon" href="content/images/2016/02/dotrand-3.png">
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+    <!-- <link rel="stylesheet" type="text/css" href="{{asset "css/Glyphter.css"}}" /> -->
+
+<!-- For speed, I’ve added the response from this link straight into defer.css-->
+<!--<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Serif+Pro:400,700/Source+Sans+Pro:400,900,400i,900i/Alegreya:400i,700i">-->
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body class="{{body_class}} nav-closed">
+<body class="{{body_class}}" id="body">
 
-    {{navigation}}
+    {{! Everything else gets inserted here }}
+    {{{body}}}
 
-    <div class="site-wrapper">
+    <footer class="site-footer">
+      <a class="subscribe icon-google-plus" target="_blank" href="https://plus.google.com/117039636326118543200">
+      </a>
+<!--  Uncomment if you want a copy of your navigation in the footer. It’s pretty cool, and gives your visitors something to do when they finish an article other than commenting, sharing, or closing the tab.    -->
+      <nav role="navigation">
+        {{navigation}}
+      </nav>
+      <section>
+        <span class="print-data copyright-notice">
+          &copy; {{date format="YYYY"}}
+          <a href="{{@blog.url}}/">{{@blog.title}}</a>
+        </span>
+      </section>
+    </footer>
 
-        {{! Everything else gets inserted here }}
-        {{{body}}}
+    <!--
+    This generates a handsome modal menu and hamburger icon. If you want to use it, edit     menu.hbs and add your links (line ~146), then remove the ! from this helper to           activate it.
+    -->
+    {{#if @blog.navigation}}
+      {{>menu}}
+    {{/if}}
+    
 
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-        </footer>
-
-    </div>
-
-    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    {{! Ghost outputs important scripts and data with this tag }}
+    <!-- Ghost outputs important scripts and data with this tag -->
     {{ghost_foot}}
 
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <!--
+    This loads katex.hbs in; if a page has anything with the class .math, katex.hbs           loads Khan Academy’s Tex math typesetting library and runs it on the content.
+
+    If you don’t want to use KaTeX, comment this out.
+    -->
+    {{>katex}}
+
+    <script>
+      var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = '{{asset "css/defer.css"}}';
+        var h = document.getElementsByTagName('head')[0];
+        h.parentNode.insertBefore(l, h);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
+    </script>
+
+    {{! The main JavaScript file for Mnml (Look, ma! No jQuery!)}}
+    <script async src="{{asset "js/index.js"}}"></script>
+    <script defer src="{{asset "js/prism.min.js"}}"></script>
 
 </body>
 </html>
