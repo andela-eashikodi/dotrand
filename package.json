@@ -12,7 +12,7 @@
     "url": "git+ssh://git@bitbucket.org/ashikodi/dotrand.git"
   },
   "engines": {
-    "node": "5.0.0"
+    "node": "~4.2.0"
   },
   "author": "",
   "license": "ISC",
