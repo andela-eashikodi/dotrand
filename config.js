@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://dotrand.com/blog',
+        url: 'http://www.dotrand.com/blog',
         fileStorage: false,
         mail: {
           transport: 'SMTP',
