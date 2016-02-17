@@ -9,6 +9,7 @@ var express = require('express'),
     
 app.use(express.static(path.join(appDir)));
 app.get('/', function(req, res) {
+  res.download(appDir + '/content/')
   res.sendFile(appDir + '/index.html');
 });
 

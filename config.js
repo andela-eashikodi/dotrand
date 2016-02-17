@@ -24,17 +24,19 @@ config = {
             }
           }
         },
+        fileStorage: false,
         database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
+            client: 'postgres',
+            connection: process.env.DATABASE_URL,
             debug: false
         },
 
         server: {
             host: '0.0.0.0',
             port: process.env.PORT
+        },
+        paths: {
+          contentPath: path.join(__dirname, '/content/')
         }
     },
 
