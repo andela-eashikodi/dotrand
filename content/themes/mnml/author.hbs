@@ -3,17 +3,12 @@
 
 {{! The big featured header }}
 
+{{>content-header}}
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
-        <nav class="main-nav overlay clearfix">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
-        </nav>
-    </header>
 
+
+<br clear="all"><br>
     <section class="author-profile inner">
         {{#if image}}
         <figure class="author-image">
@@ -21,13 +16,12 @@
         </figure>
         {{/if}}
         <h1 class="author-title">{{name}}</h1>
-        {{#if bio}}
-            <h2 class="author-bio">{{bio}}</h2>
-        {{/if}}
+        <em class="author-bio">{{bio}}</em>
         <div class="author-meta">
             {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-            {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+            {{#if website}}<span class="author-link icon-link">&nbsp;<a href="{{website}}">{{website}}</a></span>{{/if}}
             <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+            <span class="author-rss"><i class="icon-google-plus"></i> &nbsp;<a target="_blank" href="https://plus.google.com/117039636326118543200">{{name}}</a></span>
         </div>
     </section>
 {{/author}}
