@@ -5,7 +5,7 @@ var app = require('./src/public/express'),
     port = process.env.PORT || 8080;
 
 ghost({
-  config: __dirname + '/src/blog/ghost.js'
+  config: __dirname + '/blog/ghost.js'
 }).then(function (ghostServer) {
   app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
   app.use(function(req, res) {
