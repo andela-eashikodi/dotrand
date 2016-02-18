@@ -7,7 +7,7 @@ angular.module('dotrand-app')
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/templates/home.html',
+        templateUrl: 'partials/home',
         controller: 'homeCtrl',
         controllerAs : 'ctrl'
       });

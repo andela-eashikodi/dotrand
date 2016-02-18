@@ -36,7 +36,7 @@ config = {
             port: process.env.PORT
         },
         paths: {
-          contentPath: path.join(__dirname, 'content/')
+          contentPath: path.join(__dirname, '/')
         }
     },
 
@@ -66,7 +66,7 @@ config = {
         database: {
             client: 'sqlite3',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+                filename: path.join(__dirname, '/data/ghost-dev.db')
             },
             debug: false
         },
@@ -81,7 +81,7 @@ config = {
         // #### Paths
         // Specify where your content directory lives
         paths: {
-            contentPath: path.join(__dirname, 'content/')
+            contentPath: path.join(__dirname, '/')
         }
     }
   };
