@@ -1,6 +1,6 @@
 'use strict';
 
-var app = require('./src/app/express'),
+var app = require('./src/public/express'),
     ghost = require('ghost'),
     port = process.env.PORT || 8080;
 
