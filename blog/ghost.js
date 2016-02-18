@@ -27,9 +27,7 @@ config = {
         fileStorage: false,
         database: {
             client: 'postgres',
-            connection: {
-              filename: path.join(__dirname, '/content/data/ghost-dev.db')
-            },
+            connection: process.env.DATABASE_URL,
             debug: false
         },
 
