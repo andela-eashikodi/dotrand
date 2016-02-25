@@ -5,7 +5,7 @@ var express = require('express'),
     path = require('path'),
     appDir = path.dirname(require.main.filename);
 
-app.use(express.static(path.join(appDir + '/src')));
+app.use(express.static(path.join(appDir + '/public')));
 app.set('views', __dirname + '/templates');
 app.engine('html', engines.mustache);
 app.set('view engine', 'html');
