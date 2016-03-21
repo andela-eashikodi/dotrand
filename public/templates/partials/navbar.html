@@ -1,25 +1,10 @@
-<nav class="navbar navbar-default" style="font-size:15px;height:70px;background-color:transparent;border-color:transparent;margin-bottom:0">
-  <div class="container-fluid" style="margin-top:10px;">
-    <div class="navbar-header">
-      <a class="" href="/" style="margin-left:10px">
-        <img src="assets/icons/dotrand-logo.png">
-      </a>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="collapse-menu">
-      <ul class="nav navbar-nav navbar-right menu-drop" style="margin-right:10px;font:normal 15px sans-serif;">
-        <li><a ng-click="goBlog()" href="/blog/dotrand-goal-and-vision/">About</a></li>
-        <li><a href="mailto:admin@dotrand.com">Contact</a></li>
-        <li><a href="#">Sign in</a></li>
-        <li class="create-page">
-          <a href="#">Create your page</a>
-        </li>
-      </ul>
-    </div>
+<nav class="navbar-form navbar-default nav-class">
+  <div class="logo-div">
+    <a class="" href="/" style="">
+      <img src="assets/icons/dotrand-logo.png">
+    </a>
+  </div>
+  <div class="search-div">
+    <input class="search-input" type="text" placeholder="search dotrand" ng-model="selected" typeahead="user as user.username for user in users | filter:{'username':$viewValue} | limitTo:8" typeahead-on-select="onSelect($item, $model)"><i class="fa fa-search"></i>
   </div>
 </nav>

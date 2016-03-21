@@ -1,17 +1,223 @@
-.content-a {
-  position:relative;
-	text-align:center;
-  width:100%;
-  height:100%;
-  overflow:hidden;
+.spinner {
+  width: 100px;
+  height: 100px;
+
+  position: absolute;
+  top: calc(50% - 70px);
+  left: calc(50% - 50px);
 }
 
-.content-b {
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #9c9;
+  border: solid 3px #fff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+form.well {
+  position: relative;
+}
+
+.overlay {
+  top: 0;
+  bottom: 0;
+  opacity: .6;
+  background-color: #000;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  position: absolute;
+  z-index: 5;
+  border-radius: 3px;
+}
+
+.please-wait {
+  text-align: center;
+  position: absolute;
+  top: calc(50% + 45px);
+  left: calc(50% - 45px);
+  color: #fff;
+  z-index: 10;
+}
+
+.glyphicon-remove {
+  cursor: pointer;
+}
+
+.fa-search {
+  position: relative;
+  left: -30px;
+}
+
+.search-input {
+  height: 42px;
+  padding: 0 35px 0 10px;
+  border-radius: 8px;
+  background: #f0f0f0;
+  border: 1px solid #777;
+  color: #575759;
+}
+
+.search-input:focus {
+  outline: none;
+  background: #fff
+}
+
+.search-div {
+  width: auto;
+  height: 50px;
+  display: inline-block;
+  right: 0;
+  position: absolute;
+  margin-right: 80px;
+  padding: 4px;
+}
+
+.nav-class {
+  height: 70px;
+  background-color: transparent;
+  border-color: transparent;
+  margin-bottom: 0;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.logo-div {
+  display: inline-block;
+  margin: auto;
+}
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/* zocial */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+
+h2 {
+  color:rgba(255,255,255,.8);
+  margin-left:12px;
+}
+
+body {
+  /*background: #272125;*/
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+form {
   position:relative;
-	text-align:center;
-  width:100%;
-  height:100%;
-  overflow:hidden;
+  margin: 70px auto;
+  width: 330px;
+  height: 50%;
+  /*background-color: #ccc*/
+}
+
+.user, .pass {
+  padding: 16px;
+  border-radius:7px;
+  border:0px;
+  background: rgba(240,240,240,.9);
+  display: block;
+  margin: 15px;
+  width: 300px;  
+  color:#575759;
+  font-size:18px;
+  height: 54px;
+}
+
+.user:focus, .pass:focus {
+  outline: none;
+  background: rgba(240,240,240,1);
+  color: #575759;
+}
+
+.login-btn {
+  /*float:right;*/
+  height: 50px;
+  width: 50%;
+  border: 0px;
+  background: #777;
+  border-radius:7px;
+  /*padding: 16px;*/
+  color:#fff;
+  font-size:17px;
+  margin: auto;
+  display: block;
+}
+
+.login-btn:hover {
+  font-size: 20px;
+  background: #f0f0f0;
+  color: #777
+}
+
+.login-btn:focus {
+  outline: none
+}
+
+.inputUserIcon {
+  position:absolute;
+  top:18px;
+  right: 35px;
+}
+
+.inputPassIcon {
+  position:absolute;
+  top:86px;
+  right: 35px;
+  color: #575759;
+  cursor: pointer;
+}
+
+.inputPassIcon:hover {
+  color: #171719
+}
+
+input::-webkit-input-placeholder {
+  color: #575759;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #575759;
 }
 
 .create-page {
@@ -166,6 +372,14 @@
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
+  .logo-div {
+    display: none;
+  }
+  
+  .search-div {
+    position: relative;
+    margin-right: 0;
+  }
 
 	.footer-distributed{
 		font: bold 14px sans-serif;

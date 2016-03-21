@@ -8,8 +8,12 @@ angular.module('dotrand-app')
       .state('home', {
         url: '/',
         templateUrl: 'partials/home',
-        controller: 'homeCtrl',
-        controllerAs : 'ctrl'
+        controller: 'homeCtrl'
+      })
+      .state('user', {
+        url: '/:user',
+        templateUrl: 'partials/profile',
+        controller: 'homeCtrl'
       });
 
     $locationProvider.html5Mode(true);
