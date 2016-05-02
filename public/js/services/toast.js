@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module('dotrand-app')
   .factory('Toast', function(){
     toastr.options = {
@@ -25,7 +27,7 @@ angular.module('dotrand-app')
       infoToast: function(msg) {
         toastr.info(msg);
       },
-      warningToast: function() {
+      warningToast: function(msg) {
         toastr.warning(msg);
       }
     };

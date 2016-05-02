@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module('dotrand-app')
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'cfpLoadingBarProvider', function($stateProvider, $urlRouterProvider, $locationProvider, cfpLoadingBarProvider) {
 

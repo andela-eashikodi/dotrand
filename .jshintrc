@@ -4,6 +4,8 @@
     "console": true,
     "__dirname": true,
     "require" :true,
-    "process": true
+    "process": true,
+    "angular": true,
+    "toastr": true
   }
 }
