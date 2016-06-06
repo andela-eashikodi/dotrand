@@ -15,13 +15,8 @@
   height:60vh;
   background-attachment:inherit;
   padding-top:5%;">
-    <form>
-      <span class="entypo-user inputUserIcon"></span>
-      <input type="text" class="user" placeholder="username" ng-model="loginDetails.username" maxlength="25" />
-      <span class="entypo-key inputPassIcon">Forgot?</span>
-      <input type="password" class="pass" placeholder="password" ng-model="loginDetails.password" maxlength="25" />
-      <button class="login-btn" ng-click="login(loginDetails)"><span class="">Log In</span></button>
-    </form>
+    <div ng-if = "signup" ng-include="'templates/partials/login.html'"></div>
+    <div ng-if = "!signup" ng-include="'templates/partials/signup.html'"></div>
 </div>
 
 <div ng-include="'templates/partials/footer.html'"></div>

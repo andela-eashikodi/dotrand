@@ -10,6 +10,14 @@ angular.module('dotrand-app')
       
       userList: function() {
         return $http.get(BaseUrl + '/users');
+      },
+      
+      register: function(info) {
+        return $http.post(BaseUrl + '/users', info);
+      },
+      
+      userStatus: function(info) {
+        return $http.post(BaseUrl + '/username/availability', info);
       }
     };
   }]);

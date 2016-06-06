@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express'),
     app = express(),
     routes = require('./routes'),
@@ -11,6 +13,6 @@ app.engine('html', engines.mustache);
 app.set('view engine', 'html');
 
 app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+app.get('/template/:name', routes.template);
 
 module.exports = app;

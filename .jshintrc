@@ -1,11 +1,15 @@
 {
   "globalstrict"  : true,
   "globals": {
+    "exports": true,
+    "module": true,
     "console": true,
     "__dirname": true,
     "require" :true,
     "process": true,
     "angular": true,
-    "toastr": true
+    "toastr": true,
+    "window": true,
+    "$": true
   }
 }

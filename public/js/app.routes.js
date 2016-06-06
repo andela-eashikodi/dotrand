@@ -9,13 +9,17 @@ angular.module('dotrand-app')
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'partials/home',
+        templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
       })
       .state('user', {
         url: '/:user',
-        templateUrl: 'partials/profile',
-        controller: 'homeCtrl'
+        templateUrl: 'templates/profile.html',
+        controller: 'profileCtrl'
+      })
+      .state('404', {
+        url: '/404',
+        templateUrl: 'templates/404.html'
       });
 
     $locationProvider.html5Mode(true);

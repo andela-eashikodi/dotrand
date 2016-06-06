@@ -6,14 +6,16 @@ angular.module('dotrand-app')
     envServiceProvider.config({
       domains: {
 				development: ['localhost', 'dev.local'],
-				production: ['dotrand.com', 'dotrand.herokuapp.com']
+				production: ['dotrand.com', 'dotrand.herokuapp.com'],
 			},
 			vars: {
 				development: {
-					API_URL: 'http://localhost:2016'
+					API_URL: 'http://localhost:2016',
+          VALIDATION_URL: 'http://localhost:2016/username/availability'
 				},
 				production: {
-					API_URL: 'https://dotrand-api.herokuapp.com'
+					API_URL: 'https://dotrand-api.herokuapp.com',
+          VALIDATION_URL: 'https://dotrand-api.herokuapp.com/username/availability'
 				}
 			}
     });

@@ -1,0 +1,20 @@
+<form class="signup-form" name="signupForm">
+  <input type="text" name="mail" class="email-address" placeholder="Email" ng-model="signupDetails.email" ng-change="clearError()" required />
+  <span class="inputUserIcon" ng-show="invalidEmail"><i class="error-icon fa fa-asterisk fa-1x" data-toggle="tooltip" data-placement="top" title="Invalid Email"></i></span>
+  <input type="text" name="fullname" class="full-name" placeholder="Full Name" ng-model="signupDetails.fullname" maxlength="25" required />
+  
+  <input type="text" class="username new-user" name="username" placeholder="Username" ng-model="signupDetails.username" ng-remote-validate="{{validationUrl}}" maxlength="25" required />
+  <span class="username-icon input-username" ng-click="toggleForm()" data-toggle="tooltip" data-placement="top" title="Already have an account?">I have</span>
+  <span class="username-icon" ng-show="signupForm.username.$pending"><i class="fa fa-cog fa-spin fa-1x" data-toggle="tooltip" data-placement="top" title="Checking availability!"></i></span>
+  <span class="username-icon" ng-show="signupForm.username.$dirty && signupForm.username.$error.ngRemoteValidate && !signupForm.username.$pending"><i class="fa fa-warning fa-1x error-icon" data-toggle="tooltip" data-placement="top" title="Username taken!"></i></span>
+  <span class="username-icon" ng-show="signupForm.username.$dirty && !signupForm.username.$pending && !signupForm.username.$error.ngRemoteValidate"><i class="green-icon fa fa-check fa-1x" data-toggle="tooltip" data-placement="top" title="Available!"></i></span>
+  
+  <input type="password" class="password" name="password" placeholder="Password" ng-model="signupDetails.password" ng-minlength="6" ng-maxlength="50" required />
+  <div class="error-div" ng-messages="signupForm.password.$error">
+    <div class="error-message" ng-message="minlength"><i class="error-icon fa fa-asterisk" aria-hidden="true"></i> Enter a minimun of 6 characters</div>
+    <div class="error-message" ng-message="maxlength"><i class="error-icon fa fa-asterisk" aria-hidden="true"></i> Can not be more than 50 characters</div>
+  </div>
+  <span class="inputPassIcon"></span>
+  
+  <button class="login-btn" ng-click="userSignUp(signupDetails)"><span class="">Sign Up</span></button>
+</form>

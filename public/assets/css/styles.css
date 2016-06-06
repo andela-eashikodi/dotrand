@@ -1,3 +1,35 @@
+.coming-soon {
+  width: 70%;
+  color: #fff;
+  margin: 10% auto;
+  text-align: center;
+}
+.coming-soon .profile-username {
+  margin: 20px auto;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.coming-soon .site-message {
+  font-size: 38px;
+}
+
+.error-message {
+  margin: -12px 0 5px 15px;
+  height: 20px;
+  font-size: 10px;
+  color: white;
+}
+
+.error-icon {
+  color: red;
+}
+
+.green-icon {
+  color: #2e8b57;
+}
+
+
 .spinner {
   width: 100px;
   height: 100px;
@@ -143,41 +175,53 @@ body {
   
 }
 
-form {
+form.login-form {
   position:relative;
   margin: 70px auto;
   width: 330px;
   height: 50%;
-  /*background-color: #ccc*/
 }
 
-.user, .pass {
-  padding: 16px;
+form.signup-form {
+  position:relative;
+  margin: 30px auto;
+  width: 330px;
+  height: 50%;
+}
+
+.full-name {
+    text-transform: capitalize;
+}
+
+.username, .password, .full-name, .email-address {
+  padding: 16px 30px 16px 16px;
   border-radius:7px;
   border:0px;
   background: rgba(240,240,240,.9);
   display: block;
-  margin: 15px;
+  margin: 10px 15px;
   width: 300px;  
   color:#575759;
   font-size:18px;
-  height: 54px;
+  height: 45px;
 }
 
-.user:focus, .pass:focus {
+.username:focus, .password:focus, .full-name:focus, .email-address:focus {
   outline: none;
   background: rgba(240,240,240,1);
   color: #575759;
 }
 
+.new-user:valid + .username-icon.input-username {
+  display: none;
+}
+
 .login-btn {
-  /*float:right;*/
   height: 50px;
   width: 50%;
   border: 0px;
   background: #777;
   border-radius:7px;
-  /*padding: 16px;*/
   color:#fff;
   font-size:17px;
   margin: auto;
@@ -185,9 +229,7 @@ form {
 }
 
 .login-btn:hover {
-  font-size: 20px;
-  background: #f0f0f0;
-  color: #777
+  font-size: 18px;
 }
 
 .login-btn:focus {
@@ -196,19 +238,31 @@ form {
 
 .inputUserIcon {
   position:absolute;
-  top:18px;
-  right: 35px;
-}
-
-.inputPassIcon {
-  position:absolute;
-  top:86px;
+  top:13px;
   right: 35px;
   color: #575759;
   cursor: pointer;
 }
 
-.inputPassIcon:hover {
+.inputPassIcon {
+  position:absolute;
+  top:69px;
+  right: 35px;
+  color: #575759;
+  cursor: pointer;
+}
+
+.username-icon {
+  position:absolute;
+  top:123px;
+  right: 35px;
+  color: #575759;
+  cursor: pointer;
+}
+
+.inputPassIcon:hover,
+.inputUserIcon:hover,
+.input-username:hover {
   color: #171719
 }
 
@@ -217,7 +271,7 @@ input::-webkit-input-placeholder {
 }
 
 input:focus::-webkit-input-placeholder {
-  color: #575759;
+  color: #898989;
 }
 
 .create-page {

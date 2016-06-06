@@ -1,0 +1,7 @@
+<form class="login-form">
+  <input type="text" class="username" placeholder="username" ng-model="loginDetails.username" maxlength="25" />
+  <span class="inputUserIcon" ng-click="toggleForm()" data-toggle="tooltip" data-placement="left" title="I don't have an account.">Create</span>
+  <input type="password" class="password" placeholder="password" ng-model="loginDetails.password" maxlength="25" />
+  <span class="inputPassIcon" data-toggle="tooltip" data-placement="left" title="I forgot my password.">Forgot?</span>
+  <button class="login-btn" ng-click="login(loginDetails)"><span class="">Log In</span></button>
+</form>

@@ -9,8 +9,7 @@ ghost({
 }).then(function (ghostServer) {
   app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
   app.use(function(req, res) {
-		res.status(404);
-		res.render('partials/404.html');
+		res.render('index.html');
 	});
   ghostServer.start(app);
 }).catch(function (err) {

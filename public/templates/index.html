@@ -21,13 +21,20 @@
     <!-- Include javascript libraries -->
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script src="/lib/bootstrap/js/tooltip.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+      });
+    </script>
     <!-- Include angular and other dependencies -->
     <script src="/lib/angular/angular.min.js"></script>
     <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/lib/angular-loading-bar/build/loading-bar.min.js"></script>
     <script src="/lib/angular-environment/src/angular-environment.js"> </script>
     <script src="/lib/ngstorage/ngStorage.min.js"></script>
+    <script src="/lib/ng-remote-validate/release/ngRemoteValidate.0.6.1.min.js"></script>
+    <script src="/lib/angular-messages/angular-messages.min.js"></script>
     <script src="/lib/toastr/toastr.js"></script>
     <script src="/lib/angular-spinners/dist/angular-spinners.min.js"></script>
     <script src="/assets/javascripts/ui-bootstrap-tpls-0.12.0.js"></script>
@@ -43,6 +50,7 @@
 
     <!-- Include all controllers -->
     <script src="/js/controllers/home.js"></script>
+    <script src="/js/controllers/profile.js"></script>
 
   </body>
 </html>
